@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "main": "Main navigation",
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "videos": "Videos",
+    "contact": "Contact",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "language": "Language",
+    "quote": "Request a quote",
+    "skip": "Skip to content"
+  },
+  "common": {
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "readMore": "Read more",
+    "contactUs": "Talk to us",
+    "viewServices": "View services",
+    "sendMessage": "Send message",
+    "requestQuote": "Request a quote",
+    "partner": "Partner {{n}}"
+  },
+  "seo": {
+    "home": {
+      "title": "Drilha Rob | Industrial welding and ship repair in Angola",
+      "description": "Ship maintenance and repair, industrial welding of iron, aluminium and stainless steel, logistics and custom-made parts for the oil and gas sector."
+    },
+    "about": {
+      "title": "About us | Drilha Rob",
+      "description": "Learn about the mission, vision and values of Drilha Rob, an industrial and naval services company for the oil and gas sector."
+    },
+    "services": {
+      "title": "Services | Drilha Rob",
+      "description": "Structure fabrication, industrial welding, industrial logistics, and ship maintenance and repair."
+    },
+    "portfolio": {
+      "title": "Portfolio | Drilha Rob",
+      "description": "See some of the work carried out by Drilha Rob."
+    },
+    "videos": {
+      "title": "Videos | Drilha Rob",
+      "description": "See the Drilha Rob team at work, in the workshop and in the field."
+    },
+    "contact": {
+      "title": "Contact | Drilha Rob",
+      "description": "Talk to the Drilha Rob team to request quotes or ask questions."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Industrial welding and ship repair for those who can't stop",
+      "text": "Ship maintenance and repair, welding of iron, aluminium and stainless steel, logistics and custom-made parts for the oil and gas sector.",
+      "pause": "Pause background video",
+      "play": "Play background video"
+    },
+    "about": {
+      "title": "Who we are",
+      "lead": "Drilha Rob specialises in ship maintenance and repair and in industrial welding of iron, aluminium and stainless steel, as well as logistics and the fabrication of custom-made parts for the oil and gas sector.",
+      "text": "With a total focus on quality, speed and value for money, we deliver customised, high-performance solutions for demanding companies that cannot afford to stop."
+    },
+    "pillars": ["Technical responsibility", "Commitment to deadlines", "Maximum safety"],
+    "what": {
+      "title": "What we do",
+      "text": "Four areas of work, carried out in the workshop or in the field, onshore and offshore."
+    },
+    "spotlight": { "title": "Featured" },
+    "partners": { "title": "Our partners" },
+    "explore": {
+      "title": "Explore more",
+      "portfolio": { "title": "Portfolio", "text": "See some of our work." },
+      "videos": { "title": "Videos", "text": "Follow our team in action." },
+      "about": { "title": "About us", "text": "Drilha Rob's mission, vision and values." }
+    },
+    "cta": {
+      "title": "Need a quote?",
+      "text": "Talk to our team to ask questions, request quotes or learn more about our services."
+    }
+  },
+  "about": {
+    "hero": { "title": "About us", "subtitle": "Learn more about Drilha Rob" },
+    "intro": [
+      "Drilha Rob is a company specialising in ship maintenance and repair and in industrial welding of iron, aluminium and stainless steel, as well as logistics and the fabrication of custom-made parts for the oil and gas sector.",
+      "We have a fully qualified team of professionals to respond efficiently and effectively to any type of work required by our clients and partners."
+    ],
+    "mission": {
+      "title": "Mission",
+      "text": "To deliver high-quality industrial and naval solutions in the oil and gas sector, focused on ship maintenance and repair and specialised welding, providing safety, efficiency and trust to our clients."
+    },
+    "vision": {
+      "title": "Vision",
+      "text": "To be a national and international reference in industrial and naval services in the oil and gas sector, recognised for technical excellence, continuous innovation and a commitment to the highest standards of quality and safety."
+    },
+    "values": {
+      "title": "Values",
+      "items": [
+        { "title": "Commitment", "text": "We act with responsibility and dedication in every project." },
+        { "title": "Technical excellence", "text": "We always pursue the highest standards of quality and innovation." },
+        { "title": "Safety", "text": "We put the safety of our employees, clients and operations first." },
+        { "title": "Integrity", "text": "We operate with ethics, transparency and respect in all relationships." },
+        { "title": "Sustainability", "text": "We promote practices that respect the environment and contribute to sustainable development." }
+      ]
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Industrial and naval solutions, carried out in the workshop or in the field, onshore and offshore."
+    },
+    "intro": "Fabrication, welding, logistics and ship maintenance, with a qualified and experienced technical team.",
+    "items": {
+      "construction": {
+        "title": "Structure fabrication",
+        "summary": "Custom-made parts for equipment and structures.",
+        "points": [
+          "Custom-made parts for equipment and structures",
+          "Tailored projects according to the client's standards and specifications",
+          "High-quality finish and guaranteed strength"
+        ]
+      },
+      "welding": {
+        "title": "Industrial welding",
+        "summary": "High-precision welding of iron, aluminium and stainless steel.",
+        "points": [
+          "High-precision welding of iron, aluminium and stainless steel",
+          "MIG, TIG and coated electrode techniques",
+          "Metal structures for platforms and piping",
+          "Repair of industrial tanks and reservoirs",
+          "Offshore and onshore technical interventions",
+          "Work in the field or in the workshop as needed, with a qualified and experienced technical team"
+        ]
+      },
+      "logistics": {
+        "title": "Industrial logistics",
+        "summary": "Safe transport of materials and parts.",
+        "points": [
+          "Safe transport of materials and parts",
+          "Logistics support for assembling and dismantling structures",
+          "Route optimisation and cargo flow control for oil and gas companies"
+        ]
+      },
+      "naval": {
+        "title": "Ship maintenance and repair",
+        "summary": "Hydraulic systems, naval boilermaking and welding, hull repair, plating and docking.",
+        "points": [
+          "Hydraulic systems",
+          "Naval boilermaker",
+          "Naval welder",
+          "Hull repair",
+          "Plating",
+          "Docking"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "hero": { "title": "Portfolio", "subtitle": "See some of our work" },
+    "open": "Enlarge image {{n}}",
+    "alt": "Drilha Rob work, image {{n}}",
+    "close": "Close image",
+    "prev": "Previous image",
+    "next": "Next image"
+  },
+  "videos": {
+    "hero": { "title": "Videos", "subtitle": "Our team in action, in the workshop and in the field." },
+    "error": "The videos could not be loaded. Please try again later.",
+    "empty": "No videos have been published yet.",
+    "play": "Play: {{title}}",
+    "openOn": "Open on {{platform}}",
+    "blocked": "This video can't be shown here. Use the link below to open it.",
+    "close": "Close video"
+  },
+  "contact": {
+    "hero": { "title": "Contact", "subtitle": "Talk to our team" },
+    "intro": "Ask questions, request quotes or find out more about our services. We reply with efficient, tailored solutions for your project.",
+    "labels": { "address": "Address", "phone": "Phone", "email": "Email" },
+    "maps": "View on map",
+    "whatsapp": "Chat on WhatsApp",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service of interest",
+      "serviceAny": "Select a service",
+      "message": "Message",
+      "errors": {
+        "name": "Enter your name.",
+        "email": "Enter a valid email address.",
+        "message": "Write your message."
+      },
+      "sent": "Opening your email app with the message ready. If nothing opens, write to us at {{email}}."
+    }
+  },
+  "footer": {
+    "tagline": "With a total focus on quality, speed and value for money, we deliver customised, high-performance solutions for demanding companies that cannot afford to stop.",
+    "links": "Quick links",
+    "services": "Services",
+    "contact": "Contact us",
+    "rights": "© 2026 Drilha Rob. All rights reserved."
+  }
+}

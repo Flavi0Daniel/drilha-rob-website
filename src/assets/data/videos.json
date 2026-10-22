@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "titulo": {
+      "pt": "Soldadura industrial em oficina",
+      "en": "Industrial welding in the workshop",
+      "fr": "Soudure industrielle en atelier"
+    },
+    "descricao": {
+      "pt": "Exemplo de vídeo. Substitua pelo vídeo real do Facebook.",
+      "en": "Sample video. Replace it with the real Facebook video.",
+      "fr": "Vidéo d'exemple. Remplacez-la par la vraie vidéo Facebook."
+    },
+    "thumbnailUrl": "https://www.drilharob.ao/img/galeria/img-6.webp",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D123456&show_text=false",
+    "originalUrl": "https://www.facebook.com/watch/?v=123456",
+    "plataforma": "facebook"
+  },
+  {
+    "id": 2,
+    "titulo": {
+      "pt": "Manutenção naval em estaleiro",
+      "en": "Ship maintenance at the shipyard",
+      "fr": "Maintenance navale en chantier"
+    },
+    "descricao": {
+      "pt": "Exemplo de vídeo. Substitua pelo vídeo real do TikTok.",
+      "en": "Sample video. Replace it with the real TikTok video.",
+      "fr": "Vidéo d'exemple. Remplacez-la par la vraie vidéo TikTok."
+    },
+    "thumbnailUrl": "https://www.drilharob.ao/img/galeria/img-3.webp",
+    "embedUrl": "https://www.tiktok.com/embed/v2/1234567890123456789",
+    "originalUrl": "https://www.tiktok.com/@drilharob/video/1234567890123456789",
+    "plataforma": "tiktok"
+  }
+]

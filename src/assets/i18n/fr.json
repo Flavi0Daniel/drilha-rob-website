@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "main": "Navigation principale",
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "videos": "Vidéos",
+    "contact": "Contact",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "language": "Langue",
+    "quote": "Demander un devis",
+    "skip": "Aller au contenu"
+  },
+  "common": {
+    "home": "Accueil",
+    "breadcrumb": "Fil d'Ariane",
+    "readMore": "En savoir plus",
+    "contactUs": "Nous contacter",
+    "viewServices": "Voir les services",
+    "sendMessage": "Envoyer un message",
+    "requestQuote": "Demander un devis",
+    "partner": "Partenaire {{n}}"
+  },
+  "seo": {
+    "home": {
+      "title": "Drilha Rob | Soudure industrielle et réparation navale en Angola",
+      "description": "Maintenance et réparation de navires, soudure industrielle de fer, d'aluminium et d'inox, logistique et pièces sur mesure pour le secteur pétrolier."
+    },
+    "about": {
+      "title": "À propos | Drilha Rob",
+      "description": "Découvrez la mission, la vision et les valeurs de Drilha Rob, entreprise de services industriels et navals pour le secteur pétrolier."
+    },
+    "services": {
+      "title": "Services | Drilha Rob",
+      "description": "Construction de structures, soudure industrielle, logistique industrielle, maintenance et réparation de navires."
+    },
+    "portfolio": {
+      "title": "Portfolio | Drilha Rob",
+      "description": "Découvrez quelques-uns des travaux réalisés par Drilha Rob."
+    },
+    "videos": {
+      "title": "Vidéos | Drilha Rob",
+      "description": "Voyez l'équipe de Drilha Rob à l'œuvre, en atelier et sur le terrain."
+    },
+    "contact": {
+      "title": "Contact | Drilha Rob",
+      "description": "Contactez l'équipe de Drilha Rob pour demander un devis ou poser vos questions."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Soudure industrielle et réparation navale pour ceux qui ne peuvent pas s'arrêter",
+      "text": "Maintenance et réparation de navires, soudure de fer, d'aluminium et d'inox, logistique et pièces sur mesure pour le secteur pétrolier.",
+      "pause": "Mettre la vidéo d'arrière-plan en pause",
+      "play": "Lire la vidéo d'arrière-plan"
+    },
+    "about": {
+      "title": "Qui sommes-nous",
+      "lead": "Drilha Rob est spécialisée dans la maintenance et la réparation de navires et dans la soudure industrielle de fer, d'aluminium et d'inox, ainsi que dans la logistique et la fabrication de pièces sur mesure pour le secteur pétrolier.",
+      "text": "Axés sur la qualité, la réactivité et le rapport qualité-prix, nous proposons des solutions personnalisées et très performantes aux entreprises exigeantes qui ne peuvent pas s'arrêter."
+    },
+    "pillars": ["Responsabilité technique", "Respect des délais", "Sécurité maximale"],
+    "what": {
+      "title": "Ce que nous faisons",
+      "text": "Quatre domaines d'activité, réalisés en atelier ou sur le terrain, onshore et offshore."
+    },
+    "spotlight": { "title": "À la une" },
+    "partners": { "title": "Nos partenaires" },
+    "explore": {
+      "title": "Pour aller plus loin",
+      "portfolio": { "title": "Portfolio", "text": "Découvrez quelques-uns de nos travaux." },
+      "videos": { "title": "Vidéos", "text": "Suivez notre équipe à l'œuvre." },
+      "about": { "title": "À propos", "text": "Mission, vision et valeurs de Drilha Rob." }
+    },
+    "cta": {
+      "title": "Besoin d'un devis ?",
+      "text": "Contactez notre équipe pour poser vos questions, demander un devis ou en savoir plus sur nos services."
+    }
+  },
+  "about": {
+    "hero": { "title": "À propos", "subtitle": "En savoir plus sur Drilha Rob" },
+    "intro": [
+      "Drilha Rob est une entreprise spécialisée dans la maintenance et la réparation de navires et dans la soudure industrielle de fer, d'aluminium et d'inox, ainsi que dans la logistique et la fabrication de pièces sur mesure pour le secteur pétrolier.",
+      "Nous disposons d'une équipe de professionnels entièrement qualifiés pour répondre avec efficacité à tout type de travaux demandés par nos clients et partenaires."
+    ],
+    "mission": {
+      "title": "Mission",
+      "text": "Garantir des solutions industrielles et navales de haute qualité dans le secteur pétrolier, axées sur la maintenance et la réparation de navires et la soudure spécialisée, en offrant sécurité, efficacité et confiance à nos clients."
+    },
+    "vision": {
+      "title": "Vision",
+      "text": "Être une référence nationale et internationale des services industriels et navals dans le secteur pétrolier, reconnue pour son excellence technique, son innovation continue et son engagement envers les plus hauts standards de qualité et de sécurité."
+    },
+    "values": {
+      "title": "Valeurs",
+      "items": [
+        { "title": "Engagement", "text": "Nous agissons avec responsabilité et dévouement dans chaque projet." },
+        { "title": "Excellence technique", "text": "Nous visons toujours les plus hauts standards de qualité et d'innovation." },
+        { "title": "Sécurité", "text": "Nous plaçons la sécurité de nos collaborateurs, de nos clients et de nos opérations en priorité." },
+        { "title": "Intégrité", "text": "Nous travaillons avec éthique, transparence et respect dans toutes nos relations." },
+        { "title": "Durabilité", "text": "Nous promouvons des pratiques qui respectent l'environnement et contribuent au développement durable." }
+      ]
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Services",
+      "subtitle": "Solutions industrielles et navales, réalisées en atelier ou sur le terrain, onshore et offshore."
+    },
+    "intro": "Fabrication, soudure, logistique et maintenance navale, avec une équipe technique qualifiée et expérimentée.",
+    "items": {
+      "construction": {
+        "title": "Construction de structures",
+        "summary": "Fabrication de pièces sur mesure pour équipements et structures.",
+        "points": [
+          "Fabrication de pièces sur mesure pour équipements et structures",
+          "Projets personnalisés selon les normes et spécifications du client",
+          "Finition de haute qualité et résistance garantie"
+        ]
+      },
+      "welding": {
+        "title": "Soudure industrielle",
+        "summary": "Soudure de fer, d'aluminium et d'inox avec une grande précision.",
+        "points": [
+          "Soudure de fer, d'aluminium et d'inox avec une grande précision",
+          "Techniques MIG, TIG et électrode enrobée",
+          "Structures métalliques pour plateformes et tuyauteries",
+          "Réparation de réservoirs et cuves industrielles",
+          "Interventions techniques offshore et onshore",
+          "Exécution sur le terrain ou en atelier selon les besoins, avec une équipe technique qualifiée et expérimentée"
+        ]
+      },
+      "logistics": {
+        "title": "Logistique industrielle",
+        "summary": "Transport de matériaux et de pièces en toute sécurité.",
+        "points": [
+          "Transport de matériaux et de pièces en toute sécurité",
+          "Appui logistique pour le montage et le démontage de structures",
+          "Optimisation des itinéraires et contrôle du flux de marchandises pour les entreprises du secteur pétrolier"
+        ]
+      },
+      "naval": {
+        "title": "Maintenance et réparation de navires",
+        "summary": "Systèmes hydrauliques, chaudronnerie et soudure navales, coque, bardage et mise en cale sèche.",
+        "points": [
+          "Systèmes hydrauliques",
+          "Chaudronnier naval",
+          "Soudeur naval",
+          "Réparation de coque",
+          "Bardage",
+          "Mise en cale sèche"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "hero": { "title": "Portfolio", "subtitle": "Découvrez quelques-uns de nos travaux" },
+    "open": "Agrandir l'image {{n}}",
+    "alt": "Travail de Drilha Rob, image {{n}}",
+    "close": "Fermer l'image",
+    "prev": "Image précédente",
+    "next": "Image suivante"
+  },
+  "videos": {
+    "hero": { "title": "Vidéos", "subtitle": "Notre équipe à l'œuvre, en atelier et sur le terrain." },
+    "error": "Impossible de charger les vidéos. Veuillez réessayer plus tard.",
+    "empty": "Aucune vidéo n'a encore été publiée.",
+    "play": "Lire : {{title}}",
+    "openOn": "Ouvrir sur {{platform}}",
+    "blocked": "Cette vidéo ne peut pas être affichée ici. Utilisez le lien ci-dessous pour l'ouvrir.",
+    "close": "Fermer la vidéo"
+  },
+  "contact": {
+    "hero": { "title": "Contact", "subtitle": "Parlez à notre équipe" },
+    "intro": "Posez vos questions, demandez un devis ou renseignez-vous sur nos services. Nous répondons par des solutions efficaces et personnalisées pour votre projet.",
+    "labels": { "address": "Adresse", "phone": "Téléphone", "email": "Email" },
+    "maps": "Voir sur la carte",
+    "whatsapp": "Écrire sur WhatsApp",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "service": "Service souhaité",
+      "serviceAny": "Choisissez un service",
+      "message": "Message",
+      "errors": {
+        "name": "Indiquez votre nom.",
+        "email": "Indiquez une adresse email valide.",
+        "message": "Écrivez votre message."
+      },
+      "sent": "Ouverture de votre application de messagerie avec le message préparé. Si rien ne s'ouvre, écrivez-nous à {{email}}."
+    }
+  },
+  "footer": {
+    "tagline": "Axés sur la qualité, la réactivité et le rapport qualité-prix, nous proposons des solutions personnalisées et très performantes aux entreprises exigeantes qui ne peuvent pas s'arrêter.",
+    "links": "Liens rapides",
+    "services": "Services",
+    "contact": "Nous contacter",
+    "rights": "© 2026 Drilha Rob. Tous droits réservés."
+  }
+}

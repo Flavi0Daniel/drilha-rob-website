@@ -1,0 +1,67 @@
+<app-page-hero
+  [title]="'portfolio.hero.title' | translate"
+  [subtitle]="'portfolio.hero.subtitle' | translate"
+  [image]="media.gallery[1]"
+></app-page-hero>
+
+<section class="bg-white py-16 lg:py-24">
+  <div class="container-x">
+    <ul class="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <li *ngFor="let src of images; let i = index" class="mb-4 break-inside-avoid">
+        <button
+          type="button"
+          (click)="open(i)"
+          class="group block w-full overflow-hidden bg-mist"
+          [attr.aria-label]="'portfolio.open' | translate: { n: i + 1 }"
+        >
+          <img
+            [src]="src"
+            [alt]="'portfolio.alt' | translate: { n: i + 1 }"
+            loading="lazy"
+            class="w-full transition-transform duration-700 group-hover:scale-105"
+          />
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div
+  *ngIf="current !== null"
+  class="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 p-4"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="'portfolio.alt' | translate: { n: current + 1 }"
+  (click)="close()"
+>
+  <button
+    type="button"
+    (click)="close()"
+    class="absolute right-4 top-4 grid h-11 w-11 place-items-center bg-black/70 text-white hover:bg-brand"
+    [attr.aria-label]="'portfolio.close' | translate"
+  >
+    <lucide-icon name="x" [size]="24"></lucide-icon>
+  </button>
+  <button
+    type="button"
+    (click)="prev(); $event.stopPropagation()"
+    class="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center bg-black/70 text-white hover:bg-brand"
+    [attr.aria-label]="'portfolio.prev' | translate"
+  >
+    <lucide-icon name="chevron-left" [size]="24"></lucide-icon>
+  </button>
+  <img
+    [src]="images[current]"
+    [alt]="'portfolio.alt' | translate: { n: current + 1 }"
+    class="max-h-full max-w-full object-contain"
+    (click)="$event.stopPropagation()"
+  />
+  <button
+    type="button"
+    (click)="next(); $event.stopPropagation()"
+    class="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center bg-black/70 text-white hover:bg-brand"
+    [attr.aria-label]="'portfolio.next' | translate"
+  >
+    <lucide-icon name="chevron-right" [size]="24"></lucide-icon>
+  </button>
+</div>

@@ -1,0 +1,235 @@
+<!-- HERO com vídeo -->
+<section data-hero class="relative isolate min-h-[100svh] overflow-hidden bg-ink text-white">
+  <video
+    #heroVideo
+    class="absolute inset-0 -z-20 h-full w-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    [poster]="media.heroPoster"
+    aria-hidden="true"
+  >
+    <source [src]="media.heroVideo" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/65 via-black/25 to-black/80"></div>
+
+  <div class="container-x flex min-h-[100svh] flex-col justify-end pb-24 pt-40 md:pb-44 lg:pb-48">
+    <div #heroText>
+      <h1 class="max-w-5xl font-display text-6xl font-semibold leading-[0.9] sm:text-8xl lg:text-[8rem]">
+        {{ 'home.hero.title' | translate }}
+      </h1>
+      <p class="mt-7 max-w-2xl text-lg text-white/90 md:text-xl">{{ 'home.hero.text' | translate }}</p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a routerLink="/servicos" class="btn btn-primary">{{ 'common.viewServices' | translate }}</a>
+        <a routerLink="/contactos" class="btn btn-outline-light">{{ 'common.contactUs' | translate }}</a>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    (click)="togglePlayback()"
+    class="absolute bottom-5 right-5 grid h-11 w-11 place-items-center border border-white/60 bg-black/40 text-white hover:bg-white hover:text-ink md:bottom-28 md:right-10"
+    [attr.aria-label]="(playing ? 'home.hero.pause' : 'home.hero.play') | translate"
+  >
+    <lucide-icon [name]="playing ? 'pause' : 'play'" [size]="18"></lucide-icon>
+  </button>
+
+  <!-- Faixa de acesso rápido aos serviços -->
+  <nav
+    class="absolute inset-x-0 bottom-0 hidden border-t border-white/25 bg-black/40 backdrop-blur-sm md:block"
+    [attr.aria-label]="'nav.services' | translate"
+  >
+    <ul class="container-x grid grid-cols-4 divide-x divide-white/25">
+      <li *ngFor="let s of services">
+        <a
+          routerLink="/servicos"
+          [fragment]="s.anchor"
+          class="group flex items-center justify-between gap-4 px-6 py-6 first:pl-0 transition-colors hover:text-white"
+        >
+          <span class="text-lg font-semibold leading-tight text-white/90 group-hover:text-white">
+            {{ 'services.items.' + s.key + '.title' | translate }}
+          </span>
+          <lucide-icon
+            name="arrow-right"
+            [size]="20"
+            class="shrink-0 transition-transform group-hover:translate-x-1"
+          ></lucide-icon>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="bg-white py-24 lg:py-32">
+  <div class="container-x grid gap-12 lg:grid-cols-12">
+    <div class="lg:col-span-4" appReveal>
+      <h2 class="h-section">{{ 'home.about.title' | translate }}</h2>
+    </div>
+    <div class="lg:col-span-8" appReveal>
+      <p class="max-w-3xl text-2xl leading-snug md:text-3xl">{{ 'home.about.lead' | translate }}</p>
+      <p class="mt-6 max-w-2xl text-lg text-steel">{{ 'home.about.text' | translate }}</p>
+      <a routerLink="/sobre-nos" class="link-arrow mt-8">
+        {{ 'common.readMore' | translate }}
+        <lucide-icon name="arrow-right" [size]="18"></lucide-icon>
+      </a>
+    </div>
+  </div>
+
+  <ul class="container-x mt-20 grid border-t border-line md:grid-cols-3" appReveal="stagger">
+    <li
+      *ngFor="let p of 'home.pillars' | translate; let i = index"
+      class="flex items-center gap-5 border-b border-line py-8 md:border-b-0 md:border-l md:px-8 md:first:border-l-0 md:first:pl-0"
+    >
+      <lucide-icon [name]="pillarIcons[i]" [size]="34" class="shrink-0 text-brand" [strokeWidth]="1.5"></lucide-icon>
+      <span class="font-display text-3xl font-semibold leading-none">{{ p }}</span>
+    </li>
+  </ul>
+</section>
+
+<!-- O QUE FAZEMOS -->
+<section class="bg-ink py-24 text-white lg:py-32" aria-labelledby="what-title">
+  <div class="container-x">
+    <div class="grid gap-6 lg:grid-cols-12" appReveal>
+      <h2 id="what-title" class="h-section lg:col-span-5">{{ 'home.what.title' | translate }}</h2>
+      <p class="max-w-xl text-lg text-white/75 lg:col-span-6 lg:col-start-7">{{ 'home.what.text' | translate }}</p>
+    </div>
+
+    <div role="tablist" class="mt-14 flex gap-10 overflow-x-auto border-b border-white/20">
+      <button
+        *ngFor="let s of services; let i = index"
+        type="button"
+        role="tab"
+        [id]="'tab-' + s.key"
+        [attr.aria-selected]="active === i"
+        [attr.aria-controls]="'panel-' + s.key"
+        [attr.tabindex]="active === i ? 0 : -1"
+        (click)="active = i"
+        (keydown)="onTabKey($event)"
+        class="-mb-px whitespace-nowrap border-b-2 pb-4 text-xl font-semibold transition-colors"
+        [ngClass]="active === i ? 'border-brand text-white' : 'border-transparent text-white/60 hover:text-white'"
+      >
+        {{ 'services.items.' + s.key + '.title' | translate }}
+      </button>
+    </div>
+
+    <ng-container *ngFor="let s of services; let i = index">
+      <div
+        *ngIf="active === i"
+        role="tabpanel"
+        [id]="'panel-' + s.key"
+        [attr.aria-labelledby]="'tab-' + s.key"
+        class="mt-12 grid items-center gap-12 lg:grid-cols-2"
+      >
+        <div appReveal>
+          <p class="text-2xl leading-snug md:text-3xl">{{ 'services.items.' + s.key + '.summary' | translate }}</p>
+          <ul class="mt-8 divide-y divide-white/15 border-y border-white/15">
+            <li
+              *ngFor="let point of 'services.items.' + s.key + '.points' | translate | slice: 0 : 4"
+              class="py-3 text-white/80"
+            >
+              {{ point }}
+            </li>
+          </ul>
+          <a routerLink="/servicos" [fragment]="s.anchor" class="btn btn-light mt-10">
+            {{ 'common.readMore' | translate }}
+          </a>
+        </div>
+        <div class="aspect-[4/3] overflow-hidden bg-graphite" appReveal="wipe">
+          <img [src]="s.image" [alt]="'services.items.' + s.key + '.title' | translate" class="h-full w-full object-cover" />
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+
+<!-- EM DESTAQUE -->
+<section class="bg-white py-24 lg:py-32">
+  <div class="container-x">
+    <h2 class="h-section" appReveal>{{ 'home.spotlight.title' | translate }}</h2>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      <a
+        *ngFor="let s of spotlight"
+        routerLink="/servicos"
+        [fragment]="s.anchor"
+        class="group relative isolate block min-h-[26rem] overflow-hidden bg-ink text-white lg:min-h-[32rem]"
+      >
+        <img
+          [src]="s.image"
+          alt=""
+          loading="lazy"
+          class="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+        <div class="flex h-full min-h-[26rem] flex-col justify-end p-8 lg:min-h-[32rem] lg:p-12">
+          <h3 class="font-display text-4xl font-semibold leading-none lg:text-5xl">
+            {{ 'services.items.' + s.key + '.title' | translate }}
+          </h3>
+          <p class="mt-3 max-w-md text-white/85">{{ 'services.items.' + s.key + '.summary' | translate }}</p>
+          <span class="mt-6 inline-flex items-center gap-2 font-semibold">
+            {{ 'common.readMore' | translate }}
+            <lucide-icon name="arrow-right" [size]="18" class="transition-transform group-hover:translate-x-1"></lucide-icon>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PARCEIROS -->
+<section class="border-y border-line bg-mist py-16" aria-labelledby="partners-title">
+  <div class="container-x">
+    <h2 id="partners-title" class="font-display text-3xl font-semibold">{{ 'home.partners.title' | translate }}</h2>
+    <swiper-container #partnersEl init="false" class="mt-8 block">
+      <swiper-slide *ngFor="let p of media.partners; let i = index">
+        <div class="grid h-28 place-items-center bg-white p-4">
+          <img
+            [src]="p"
+            [alt]="'common.partner' | translate: { n: i + 1 }"
+            loading="lazy"
+            class="max-h-full max-w-full object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+          />
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</section>
+
+<!-- EXPLORE MAIS -->
+<section class="bg-white py-24 lg:py-32">
+  <div class="container-x">
+    <h2 class="h-section" appReveal>{{ 'home.explore.title' | translate }}</h2>
+    <ul class="mt-12 grid gap-10 md:grid-cols-3" appReveal="stagger">
+      <li *ngFor="let c of explore">
+        <a [routerLink]="c.link" class="group block">
+          <div class="aspect-[16/10] overflow-hidden bg-mist">
+            <img
+              [src]="c.image"
+              alt=""
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+          </div>
+          <h3 class="mt-5 text-3xl font-semibold leading-tight group-hover:text-brand">
+            {{ 'home.explore.' + c.key + '.title' | translate }}
+          </h3>
+          <p class="mt-2 text-steel">{{ 'home.explore.' + c.key + '.text' | translate }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="bg-brand py-20 text-white">
+  <div class="container-x flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+    <div class="max-w-2xl" appReveal>
+      <h2 class="h-section">{{ 'home.cta.title' | translate }}</h2>
+      <p class="mt-4 text-lg text-white/90">{{ 'home.cta.text' | translate }}</p>
+    </div>
+    <a routerLink="/contactos" class="btn btn-light shrink-0">{{ 'common.sendMessage' | translate }}</a>
+  </div>
+</section>

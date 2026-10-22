@@ -1,0 +1,164 @@
+<header
+  class="fixed inset-x-0 top-0 z-50 transition-colors duration-300"
+  [ngClass]="
+    transparent
+      ? 'bg-gradient-to-b from-black/55 to-transparent text-white'
+      : 'bg-white text-ink shadow-[0_1px_0_#D7DCDF]'
+  "
+  (mouseleave)="servicesOpen = false"
+>
+  <div class="container-x flex h-[76px] items-center justify-between gap-6">
+    <a routerLink="/" class="flex items-center gap-3" (click)="closeAll()" aria-label="Drilha Rob">
+      <img
+        [src]="media.logo"
+        alt=""
+        class="h-9 w-auto transition-[filter] duration-300"
+        [style.filter]="transparent ? 'brightness(0) invert(1)' : 'none'"
+      />
+      <span class="font-display text-2xl font-semibold tracking-wide">Drilha Rob</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 lg:flex" [attr.aria-label]="'nav.main' | translate">
+      <a
+        routerLink="/"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+        (mouseenter)="servicesOpen = false"
+      >
+        {{ 'nav.home' | translate }}
+      </a>
+      <a routerLink="/sobre-nos" routerLinkActive="is-active" class="nav-link" (mouseenter)="servicesOpen = false">
+        {{ 'nav.about' | translate }}
+      </a>
+
+      <div class="flex items-center">
+        <a
+          routerLink="/servicos"
+          routerLinkActive="is-active"
+          class="nav-link"
+          (mouseenter)="servicesOpen = true"
+          (focus)="servicesOpen = true"
+          (click)="servicesOpen = false"
+        >
+          {{ 'nav.services' | translate }}
+        </a>
+        <button
+          type="button"
+          class="ml-1 p-1"
+          (click)="servicesOpen = !servicesOpen"
+          [attr.aria-expanded]="servicesOpen"
+          aria-controls="services-panel"
+          [attr.aria-label]="'nav.services' | translate"
+        >
+          <lucide-icon
+            name="chevron-down"
+            [size]="16"
+            class="transition-transform"
+            [class.rotate-180]="servicesOpen"
+          ></lucide-icon>
+        </button>
+      </div>
+
+      <a routerLink="/portfolio" routerLinkActive="is-active" class="nav-link" (mouseenter)="servicesOpen = false">
+        {{ 'nav.portfolio' | translate }}
+      </a>
+      <a routerLink="/videos" routerLinkActive="is-active" class="nav-link" (mouseenter)="servicesOpen = false">
+        {{ 'nav.videos' | translate }}
+      </a>
+      <a routerLink="/contactos" routerLinkActive="is-active" class="nav-link" (mouseenter)="servicesOpen = false">
+        {{ 'nav.contact' | translate }}
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <div class="hidden md:block">
+        <app-language-selector [tone]="transparent ? 'light' : 'dark'"></app-language-selector>
+      </div>
+      <a routerLink="/contactos" class="btn btn-primary hidden !py-2.5 md:inline-flex lg:inline-flex">
+        {{ 'nav.quote' | translate }}
+      </a>
+      <button
+        type="button"
+        class="p-2 lg:hidden"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="mobile-menu"
+        [attr.aria-label]="(menuOpen ? 'nav.close' : 'nav.menu') | translate"
+      >
+        <lucide-icon [name]="menuOpen ? 'x' : 'menu'" [size]="26"></lucide-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Painel de serviços (desktop) -->
+  <div
+    *ngIf="servicesOpen"
+    id="services-panel"
+    class="absolute inset-x-0 top-full hidden border-t border-line bg-white text-ink shadow-xl lg:block"
+  >
+    <div class="container-x grid grid-cols-4 gap-8 py-8">
+      <a
+        *ngFor="let s of services"
+        routerLink="/servicos"
+        [fragment]="s.anchor"
+        (click)="servicesOpen = false"
+        class="group block"
+      >
+        <div class="aspect-[16/10] overflow-hidden bg-mist">
+          <img
+            [src]="s.image"
+            alt=""
+            loading="lazy"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+        <h3 class="mt-4 text-2xl font-semibold leading-tight group-hover:text-brand">
+          {{ 'services.items.' + s.key + '.title' | translate }}
+        </h3>
+        <p class="mt-1 text-sm text-steel">{{ 'services.items.' + s.key + '.summary' | translate }}</p>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Menu móvel -->
+<div
+  *ngIf="menuOpen"
+  id="mobile-menu"
+  class="fixed inset-0 z-40 overflow-y-auto bg-ink pt-[76px] text-white lg:hidden"
+>
+  <nav class="container-x flex flex-col py-8" [attr.aria-label]="'nav.main' | translate">
+    <a routerLink="/" (click)="closeAll()" class="border-b border-white/15 py-4 font-display text-4xl font-semibold">
+      {{ 'nav.home' | translate }}
+    </a>
+    <a routerLink="/sobre-nos" (click)="closeAll()" class="border-b border-white/15 py-4 font-display text-4xl font-semibold">
+      {{ 'nav.about' | translate }}
+    </a>
+    <div class="border-b border-white/15 py-4">
+      <a routerLink="/servicos" (click)="closeAll()" class="font-display text-4xl font-semibold">
+        {{ 'nav.services' | translate }}
+      </a>
+      <ul class="mt-3 flex flex-col gap-2 text-white/75">
+        <li *ngFor="let s of services">
+          <a routerLink="/servicos" [fragment]="s.anchor" (click)="closeAll()" class="block py-1">
+            {{ 'services.items.' + s.key + '.title' | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a routerLink="/portfolio" (click)="closeAll()" class="border-b border-white/15 py-4 font-display text-4xl font-semibold">
+      {{ 'nav.portfolio' | translate }}
+    </a>
+    <a routerLink="/videos" (click)="closeAll()" class="border-b border-white/15 py-4 font-display text-4xl font-semibold">
+      {{ 'nav.videos' | translate }}
+    </a>
+    <a routerLink="/contactos" (click)="closeAll()" class="border-b border-white/15 py-4 font-display text-4xl font-semibold">
+      {{ 'nav.contact' | translate }}
+    </a>
+    <div class="mt-8 flex items-center justify-between">
+      <app-language-selector tone="light"></app-language-selector>
+      <a routerLink="/contactos" (click)="closeAll()" class="btn btn-primary">{{ 'nav.quote' | translate }}</a>
+    </div>
+  </nav>
+</div>

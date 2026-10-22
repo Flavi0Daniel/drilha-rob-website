@@ -1,0 +1,106 @@
+<app-page-hero
+  [title]="'contact.hero.title' | translate"
+  [subtitle]="'contact.hero.subtitle' | translate"
+  [image]="media.gallery[2]"
+></app-page-hero>
+
+<section class="bg-white py-16 lg:py-24">
+  <div class="container-x grid gap-16 lg:grid-cols-12">
+    <div class="lg:col-span-5" appReveal>
+      <p class="text-2xl leading-snug">{{ 'contact.intro' | translate }}</p>
+
+      <dl class="mt-10 divide-y divide-line border-y border-line">
+        <div class="py-5">
+          <dt class="text-sm font-semibold text-steel">{{ 'contact.labels.address' | translate }}</dt>
+          <dd class="mt-1 text-lg">
+            {{ contact.address }}
+            <a [href]="contact.mapsUrl" target="_blank" rel="noopener" class="mt-1 block font-semibold text-brand hover:text-brand-dark">
+              {{ 'contact.maps' | translate }}
+            </a>
+          </dd>
+        </div>
+        <div class="py-5">
+          <dt class="text-sm font-semibold text-steel">{{ 'contact.labels.phone' | translate }}</dt>
+          <dd class="mt-1 space-y-1 text-lg">
+            <a *ngFor="let p of contact.phones" [href]="'tel:' + p.replace(' ', '')" class="block hover:text-brand">{{ p }}</a>
+          </dd>
+        </div>
+        <div class="py-5">
+          <dt class="text-sm font-semibold text-steel">{{ 'contact.labels.email' | translate }}</dt>
+          <dd class="mt-1 text-lg">
+            <a [href]="'mailto:' + contact.email" class="hover:text-brand">{{ contact.email }}</a>
+          </dd>
+        </div>
+      </dl>
+
+      <a [href]="contact.whatsapp" target="_blank" rel="noopener" class="btn btn-primary mt-8">
+        <lucide-icon name="message-circle" [size]="20"></lucide-icon>
+        {{ 'contact.whatsapp' | translate }}
+      </a>
+    </div>
+
+    <form class="lg:col-span-7" [formGroup]="form" (ngSubmit)="submit()" novalidate appReveal>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label for="name" class="block font-semibold">{{ 'contact.form.name' | translate }}</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            autocomplete="name"
+            class="mt-2 w-full border border-line bg-white px-4 py-3 focus:border-ink"
+            [attr.aria-invalid]="invalid('name')"
+            [attr.aria-describedby]="invalid('name') ? 'name-error' : null"
+          />
+          <p *ngIf="invalid('name')" id="name-error" class="mt-1 text-sm text-brand-dark">{{ 'contact.form.errors.name' | translate }}</p>
+        </div>
+        <div>
+          <label for="email" class="block font-semibold">{{ 'contact.form.email' | translate }}</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            autocomplete="email"
+            class="mt-2 w-full border border-line bg-white px-4 py-3 focus:border-ink"
+            [attr.aria-invalid]="invalid('email')"
+            [attr.aria-describedby]="invalid('email') ? 'email-error' : null"
+          />
+          <p *ngIf="invalid('email')" id="email-error" class="mt-1 text-sm text-brand-dark">{{ 'contact.form.errors.email' | translate }}</p>
+        </div>
+        <div>
+          <label for="phone" class="block font-semibold">{{ 'contact.form.phone' | translate }}</label>
+          <input
+            id="phone"
+            type="tel"
+            formControlName="phone"
+            autocomplete="tel"
+            class="mt-2 w-full border border-line bg-white px-4 py-3 focus:border-ink"
+          />
+        </div>
+        <div>
+          <label for="service" class="block font-semibold">{{ 'contact.form.service' | translate }}</label>
+          <select id="service" formControlName="service" class="mt-2 w-full border border-line bg-white px-4 py-3 focus:border-ink">
+            <option value="">{{ 'contact.form.serviceAny' | translate }}</option>
+            <option *ngFor="let s of services" [value]="s.key">{{ 'services.items.' + s.key + '.title' | translate }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <label for="message" class="block font-semibold">{{ 'contact.form.message' | translate }}</label>
+        <textarea
+          id="message"
+          rows="6"
+          formControlName="message"
+          class="mt-2 w-full border border-line bg-white px-4 py-3 focus:border-ink"
+          [attr.aria-invalid]="invalid('message')"
+          [attr.aria-describedby]="invalid('message') ? 'message-error' : null"
+        ></textarea>
+        <p *ngIf="invalid('message')" id="message-error" class="mt-1 text-sm text-brand-dark">{{ 'contact.form.errors.message' | translate }}</p>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-8">{{ 'common.sendMessage' | translate }}</button>
+      <p *ngIf="sent" class="mt-4 text-steel" role="status">{{ 'contact.form.sent' | translate: { email: contact.email } }}</p>
+    </form>
+  </div>
+</section>

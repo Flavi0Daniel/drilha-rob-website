@@ -1,0 +1,59 @@
+<app-page-hero
+  [title]="'videos.hero.title' | translate"
+  [subtitle]="'videos.hero.subtitle' | translate"
+  [image]="media.gallery[3]"
+></app-page-hero>
+
+<section class="bg-white py-16 lg:py-24">
+  <div class="container-x">
+    <ul *ngIf="state === 'loading'" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true">
+      <li *ngFor="let n of [1, 2, 3]">
+        <div class="aspect-video animate-pulse bg-mist"></div>
+        <div class="mt-4 h-6 w-3/4 animate-pulse bg-mist"></div>
+      </li>
+    </ul>
+
+    <p *ngIf="state === 'error'" class="max-w-xl text-lg text-steel" role="alert">{{ 'videos.error' | translate }}</p>
+    <p *ngIf="state === 'ready' && videos.length === 0" class="max-w-xl text-lg text-steel">
+      {{ 'videos.empty' | translate }}
+    </p>
+
+    <ul *ngIf="state === 'ready' && videos.length" class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3" appReveal="stagger">
+      <li *ngFor="let v of videos">
+        <button
+          type="button"
+          class="group block w-full text-left"
+          (click)="selected = v"
+          [attr.aria-label]="'videos.play' | translate: { title: (v.titulo | localized) }"
+        >
+          <span
+            class="relative block overflow-hidden bg-ink"
+            [ngClass]="v.plataforma === 'tiktok' ? 'aspect-[3/4]' : 'aspect-video'"
+          >
+            <img
+              [src]="v.thumbnailUrl"
+              alt=""
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <span class="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/40"></span>
+            <span class="absolute inset-0 grid place-items-center">
+              <span class="grid h-16 w-16 place-items-center bg-brand text-white transition-transform group-hover:scale-110">
+                <lucide-icon name="play" [size]="26" [strokeWidth]="2.5"></lucide-icon>
+              </span>
+            </span>
+            <span class="absolute left-3 top-3 bg-white px-2 py-1 text-sm font-semibold text-ink">
+              {{ platformName(v) }}
+            </span>
+          </span>
+          <span class="mt-4 block text-2xl font-semibold leading-tight group-hover:text-brand">
+            {{ v.titulo | localized }}
+          </span>
+          <span class="mt-1 block text-steel">{{ v.descricao | localized }}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<app-video-modal [video]="selected" (closed)="selected = null"></app-video-modal>

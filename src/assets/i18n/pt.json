@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "main": "Navegação principal",
+    "home": "Início",
+    "about": "Sobre nós",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "videos": "Vídeos",
+    "contact": "Contactos",
+    "menu": "Abrir menu",
+    "close": "Fechar menu",
+    "language": "Idioma",
+    "quote": "Pedir orçamento",
+    "skip": "Saltar para o conteúdo"
+  },
+  "common": {
+    "home": "Início",
+    "breadcrumb": "Caminho de navegação",
+    "readMore": "Ler mais",
+    "contactUs": "Falar connosco",
+    "viewServices": "Ver serviços",
+    "sendMessage": "Enviar mensagem",
+    "requestQuote": "Pedir orçamento",
+    "partner": "Parceiro {{n}}"
+  },
+  "seo": {
+    "home": {
+      "title": "Drilha Rob | Soldadura industrial e reparação naval em Angola",
+      "description": "Manutenção e reparação de navios, soldadura industrial de ferro, alumínio e inox, logística e construção de peças sob medida para o sector petrolífero."
+    },
+    "about": {
+      "title": "Sobre nós | Drilha Rob",
+      "description": "Conheça a missão, a visão e os valores da Drilha Rob, empresa de serviços industriais e navais para o sector petrolífero."
+    },
+    "services": {
+      "title": "Serviços | Drilha Rob",
+      "description": "Construção de estruturas, soldadura industrial, logística industrial e manutenção e reparação de navios."
+    },
+    "portfolio": {
+      "title": "Portfólio | Drilha Rob",
+      "description": "Veja alguns dos trabalhos realizados pela Drilha Rob."
+    },
+    "videos": {
+      "title": "Vídeos | Drilha Rob",
+      "description": "Veja a equipa da Drilha Rob em acção, em oficina e em campo."
+    },
+    "contact": {
+      "title": "Contactos | Drilha Rob",
+      "description": "Fale com a equipa da Drilha Rob para pedir orçamentos ou tirar dúvidas."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Soldadura industrial e reparação naval para quem não pode parar",
+      "text": "Manutenção e reparação de navios, soldadura de ferro, alumínio e inox, logística e peças sob medida para o sector petrolífero.",
+      "pause": "Pausar vídeo de fundo",
+      "play": "Reproduzir vídeo de fundo"
+    },
+    "about": {
+      "title": "Quem somos",
+      "lead": "A Drilha Rob é especializada em manutenção e reparação de navios e na prestação de serviços de soldadura industrial de ferro, alumínio e inox, além de logística e construção de peças sob medida para o sector petrolífero.",
+      "text": "Com foco total em qualidade, agilidade e custo-benefício, entregamos soluções personalizadas e de alto desempenho para empresas exigentes que não podem parar."
+    },
+    "pillars": ["Responsabilidade técnica", "Compromisso com prazos", "Máxima segurança"],
+    "what": {
+      "title": "O que fazemos",
+      "text": "Quatro áreas de trabalho, executadas em oficina ou em campo, onshore e offshore."
+    },
+    "spotlight": { "title": "Em destaque" },
+    "partners": { "title": "Os nossos parceiros" },
+    "explore": {
+      "title": "Explore mais",
+      "portfolio": { "title": "Portfólio", "text": "Veja alguns dos nossos trabalhos." },
+      "videos": { "title": "Vídeos", "text": "Acompanhe a nossa equipa em acção." },
+      "about": { "title": "Sobre nós", "text": "Missão, visão e valores da Drilha Rob." }
+    },
+    "cta": {
+      "title": "Precisa de um orçamento?",
+      "text": "Fale com a nossa equipa para tirar dúvidas, solicitar orçamentos ou saber mais sobre os nossos serviços."
+    }
+  },
+  "about": {
+    "hero": { "title": "Sobre nós", "subtitle": "Saiba mais sobre a Drilha Rob" },
+    "intro": [
+      "A Drilha Rob é uma empresa especializada em manutenção e reparação de navios e na prestação de serviços de soldadura industrial de ferro, alumínio e inox, além de atuar com logística e construção de peças sob medida para o sector petrolífero.",
+      "Temos uma equipa totalmente qualificada de profissionais para responder com eficiência e eficácia a qualquer tipo de trabalho exigido pelos clientes e parceiros."
+    ],
+    "mission": {
+      "title": "Missão",
+      "text": "Garantir soluções industriais e navais de alta qualidade no sector petrolífero, com foco em manutenção e reparação de navios e em soldadura especializada, promovendo segurança, eficiência e confiança aos nossos clientes."
+    },
+    "vision": {
+      "title": "Visão",
+      "text": "Ser uma referência nacional e internacional em serviços industriais e navais no sector petrolífero, reconhecida pela excelência técnica, pela inovação contínua e pelo compromisso com os mais altos padrões de qualidade e segurança."
+    },
+    "values": {
+      "title": "Valores",
+      "items": [
+        { "title": "Comprometimento", "text": "Actuamos com responsabilidade e dedicação em cada projecto." },
+        { "title": "Excelência técnica", "text": "Procuramos sempre os mais altos padrões de qualidade e inovação." },
+        { "title": "Segurança", "text": "Priorizamos a segurança dos nossos colaboradores, clientes e operações." },
+        { "title": "Integridade", "text": "Operamos com ética, transparência e respeito em todas as relações." },
+        { "title": "Sustentabilidade", "text": "Promovemos práticas que respeitam o ambiente e contribuem para o desenvolvimento sustentável." }
+      ]
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Serviços",
+      "subtitle": "Soluções industriais e navais, executadas em oficina ou em campo, onshore e offshore."
+    },
+    "intro": "Fabricação, soldadura, logística e manutenção naval, com equipa técnica qualificada e experiente.",
+    "items": {
+      "construction": {
+        "title": "Construção de estruturas",
+        "summary": "Fabricação de peças sob medida para equipamentos e estruturas.",
+        "points": [
+          "Fabricação de peças sob medida para equipamentos e estruturas",
+          "Projectos personalizados conforme normas e especificações do cliente",
+          "Acabamento de alta qualidade e resistência garantida"
+        ]
+      },
+      "welding": {
+        "title": "Soldadura industrial",
+        "summary": "Soldadura de ferro, alumínio e inox com alta precisão.",
+        "points": [
+          "Soldadura de ferro, alumínio e inox com alta precisão",
+          "Técnicas MIG, TIG e eléctrodo revestido",
+          "Estruturas metálicas para plataformas e tubagens",
+          "Reparação de tanques e reservatórios industriais",
+          "Intervenções técnicas offshore e onshore",
+          "Execução em campo ou em oficina, conforme a necessidade, com equipa técnica qualificada e experiente"
+        ]
+      },
+      "logistics": {
+        "title": "Logística industrial",
+        "summary": "Transporte de materiais e peças com segurança.",
+        "points": [
+          "Transporte de materiais e peças com segurança",
+          "Apoio logístico para montagem e desmontagem de estruturas",
+          "Optimização de rotas e controlo do fluxo de cargas para empresas do sector petrolífero"
+        ]
+      },
+      "naval": {
+        "title": "Manutenção e reparação de navios",
+        "summary": "Sistemas hidráulicos, caldeiraria e soldadura naval, casco, chapeamento e docagem.",
+        "points": [
+          "Sistemas hidráulicos",
+          "Caldeireiro naval",
+          "Soldador naval",
+          "Conserto de casco",
+          "Chapeamento",
+          "Docagem"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "hero": { "title": "Portfólio", "subtitle": "Veja alguns dos nossos trabalhos" },
+    "open": "Ampliar imagem {{n}}",
+    "alt": "Trabalho da Drilha Rob, imagem {{n}}",
+    "close": "Fechar imagem",
+    "prev": "Imagem anterior",
+    "next": "Imagem seguinte"
+  },
+  "videos": {
+    "hero": { "title": "Vídeos", "subtitle": "A nossa equipa em acção, em oficina e em campo." },
+    "error": "Não foi possível carregar os vídeos. Tente novamente mais tarde.",
+    "empty": "Ainda não há vídeos publicados.",
+    "play": "Reproduzir: {{title}}",
+    "openOn": "Abrir no {{platform}}",
+    "blocked": "Este vídeo não pode ser mostrado aqui. Use a ligação abaixo para o abrir.",
+    "close": "Fechar vídeo"
+  },
+  "contact": {
+    "hero": { "title": "Contactos", "subtitle": "Fale com a nossa equipa" },
+    "intro": "Tire dúvidas, solicite orçamentos ou saiba mais sobre os nossos serviços. Respondemos com soluções eficientes e personalizadas para o seu projecto.",
+    "labels": { "address": "Endereço", "phone": "Telefone", "email": "Email" },
+    "maps": "Ver no mapa",
+    "whatsapp": "Falar por WhatsApp",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Telefone",
+      "service": "Serviço de interesse",
+      "serviceAny": "Seleccione um serviço",
+      "message": "Mensagem",
+      "errors": {
+        "name": "Indique o seu nome.",
+        "email": "Indique um email válido.",
+        "message": "Escreva a sua mensagem."
+      },
+      "sent": "A abrir a sua aplicação de email com a mensagem preparada. Se nada abrir, escreva-nos para {{email}}."
+    }
+  },
+  "footer": {
+    "tagline": "Com foco total em qualidade, agilidade e custo-benefício, entregamos soluções personalizadas e de alto desempenho para empresas exigentes que não podem parar.",
+    "links": "Links rápidos",
+    "services": "Serviços",
+    "contact": "Fale connosco",
+    "rights": "© 2026 Drilha Rob. Todos os direitos reservados."
+  }
+}

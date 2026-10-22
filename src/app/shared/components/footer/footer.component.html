@@ -1,0 +1,84 @@
+<footer class="bg-ink text-white">
+  <div class="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:py-20">
+    <div class="lg:col-span-5">
+      <a routerLink="/" class="inline-flex items-center gap-3" aria-label="Drilha Rob">
+        <img [src]="media.logo" alt="" class="h-10 w-auto" style="filter: brightness(0) invert(1)" />
+        <span class="font-display text-3xl font-semibold tracking-wide">Drilha Rob</span>
+      </a>
+      <p class="mt-6 max-w-md text-white/70">{{ 'footer.tagline' | translate }}</p>
+      <div class="mt-8 flex gap-3">
+        <a
+          [href]="contact.facebook"
+          target="_blank"
+          rel="noopener"
+          class="grid h-11 w-11 place-items-center border border-white/25 transition-colors hover:bg-white hover:text-ink"
+          aria-label="Facebook"
+        >
+          <lucide-icon name="facebook" [size]="20"></lucide-icon>
+        </a>
+        <a
+          [href]="contact.linkedin"
+          target="_blank"
+          rel="noopener"
+          class="grid h-11 w-11 place-items-center border border-white/25 transition-colors hover:bg-white hover:text-ink"
+          aria-label="LinkedIn"
+        >
+          <lucide-icon name="linkedin" [size]="20"></lucide-icon>
+        </a>
+        <a
+          [href]="contact.whatsapp"
+          target="_blank"
+          rel="noopener"
+          class="grid h-11 w-11 place-items-center border border-white/25 transition-colors hover:bg-white hover:text-ink"
+          aria-label="WhatsApp"
+        >
+          <lucide-icon name="message-circle" [size]="20"></lucide-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-2">
+      <h2 class="text-xl font-semibold">{{ 'footer.links' | translate }}</h2>
+      <ul class="mt-4 space-y-2 text-white/70">
+        <li><a routerLink="/sobre-nos" class="hover:text-white">{{ 'nav.about' | translate }}</a></li>
+        <li><a routerLink="/servicos" class="hover:text-white">{{ 'nav.services' | translate }}</a></li>
+        <li><a routerLink="/portfolio" class="hover:text-white">{{ 'nav.portfolio' | translate }}</a></li>
+        <li><a routerLink="/videos" class="hover:text-white">{{ 'nav.videos' | translate }}</a></li>
+        <li><a routerLink="/contactos" class="hover:text-white">{{ 'nav.contact' | translate }}</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <h2 class="text-xl font-semibold">{{ 'footer.services' | translate }}</h2>
+      <ul class="mt-4 space-y-2 text-white/70">
+        <li *ngFor="let s of services">
+          <a routerLink="/servicos" [fragment]="s.anchor" class="hover:text-white">
+            {{ 'services.items.' + s.key + '.title' | translate }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-3">
+      <h2 class="text-xl font-semibold">{{ 'footer.contact' | translate }}</h2>
+      <ul class="mt-4 space-y-3 text-white/70">
+        <li class="flex gap-3">
+          <lucide-icon name="mail" [size]="18" class="mt-1 shrink-0"></lucide-icon>
+          <a [href]="'mailto:' + contact.email" class="hover:text-white">{{ contact.email }}</a>
+        </li>
+        <li *ngFor="let p of contact.phones" class="flex gap-3">
+          <lucide-icon name="phone" [size]="18" class="mt-1 shrink-0"></lucide-icon>
+          <a [href]="'tel:' + p.replace(' ', '')" class="hover:text-white">{{ p }}</a>
+        </li>
+        <li class="flex gap-3">
+          <lucide-icon name="map-pin" [size]="18" class="mt-1 shrink-0"></lucide-icon>
+          <span>{{ contact.address }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/15">
+    <div class="container-x py-6 text-sm text-white/60">{{ 'footer.rights' | translate }}</div>
+  </div>
+</footer>

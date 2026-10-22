@@ -1,0 +1,53 @@
+<div
+  *ngIf="video"
+  class="fixed inset-0 z-[70] flex items-center justify-center bg-black/85 p-4"
+  role="dialog"
+  aria-modal="true"
+  [attr.aria-label]="video.titulo | localized"
+  (click)="close()"
+>
+  <div
+    class="relative max-h-full w-full overflow-y-auto"
+    [ngClass]="video.plataforma === 'tiktok' ? 'max-w-sm' : 'max-w-4xl'"
+    (click)="$event.stopPropagation()"
+  >
+    <button
+      #closeBtn
+      type="button"
+      (click)="close()"
+      class="absolute right-2 top-2 z-10 grid h-10 w-10 place-items-center bg-black/70 text-white hover:bg-brand"
+      [attr.aria-label]="'videos.close' | translate"
+    >
+      <lucide-icon name="x" [size]="22"></lucide-icon>
+    </button>
+
+    <div class="overflow-hidden bg-black" [ngClass]="video.plataforma === 'tiktok' ? 'aspect-[9/16]' : 'aspect-video'">
+      <iframe
+        *ngIf="safeUrl; else blocked"
+        [src]="safeUrl"
+        class="h-full w-full border-0"
+        [title]="video.titulo | localized"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share; fullscreen"
+        allowfullscreen
+      ></iframe>
+      <ng-template #blocked>
+        <p class="grid h-full place-items-center p-8 text-center text-white/80">
+          {{ 'videos.blocked' | translate }}
+        </p>
+      </ng-template>
+    </div>
+
+    <div class="mt-4 text-white">
+      <h2 class="text-3xl font-semibold">{{ video.titulo | localized }}</h2>
+      <p class="mt-2 text-white/75">{{ video.descricao | localized }}</p>
+      <a
+        [href]="video.originalUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex font-semibold text-white underline underline-offset-4 hover:text-brand"
+      >
+        {{ 'videos.openOn' | translate: { platform: platformName } }}
+      </a>
+    </div>
+  </div>
+</div>

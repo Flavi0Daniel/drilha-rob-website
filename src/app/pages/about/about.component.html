@@ -1,0 +1,58 @@
+<app-page-hero
+  [title]="'about.hero.title' | translate"
+  [subtitle]="'about.hero.subtitle' | translate"
+  [image]="media.gallery[4]"
+></app-page-hero>
+
+<section class="bg-white py-20 lg:py-28">
+  <div class="container-x grid gap-12 lg:grid-cols-12">
+    <div class="lg:col-span-7" appReveal>
+      <p class="text-2xl leading-snug md:text-3xl">{{ ('about.intro' | translate)[0] }}</p>
+    </div>
+    <div class="space-y-5 text-lg text-steel lg:col-span-5" appReveal>
+      <p>{{ ('about.intro' | translate)[1] }}</p>
+      <p class="font-semibold text-ink">{{ 'home.about.text' | translate }}</p>
+    </div>
+  </div>
+</section>
+
+<section
+  *ngFor="let b of blocks; let i = index"
+  class="py-16 lg:py-24"
+  [ngClass]="i % 2 === 0 ? 'bg-mist' : 'bg-white'"
+>
+  <div class="container-x grid items-center gap-12 lg:grid-cols-2">
+    <div [ngClass]="i % 2 === 1 ? 'lg:order-2' : ''" class="aspect-[4/3] overflow-hidden bg-graphite" appReveal="wipe">
+      <img [src]="b.image" alt="" loading="lazy" class="h-full w-full object-cover" />
+    </div>
+    <div appReveal>
+      <h2 class="h-section">{{ 'about.' + b.key + '.title' | translate }}</h2>
+      <p class="mt-6 max-w-xl text-xl leading-relaxed">{{ 'about.' + b.key + '.text' | translate }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-ink py-20 text-white lg:py-28">
+  <div class="container-x">
+    <h2 class="h-section" appReveal>{{ 'about.values.title' | translate }}</h2>
+    <ul class="mt-12 grid border-t border-white/20 md:grid-cols-2 lg:grid-cols-3" appReveal="stagger">
+      <li
+        *ngFor="let v of 'about.values.items' | translate"
+        class="border-b border-white/20 py-8 md:pr-10"
+      >
+        <h3 class="text-3xl font-semibold">{{ v.title }}</h3>
+        <p class="mt-3 text-white/75">{{ v.text }}</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-brand py-20 text-white">
+  <div class="container-x flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+    <div class="max-w-2xl" appReveal>
+      <h2 class="h-section">{{ 'home.cta.title' | translate }}</h2>
+      <p class="mt-4 text-lg text-white/90">{{ 'home.cta.text' | translate }}</p>
+    </div>
+    <a routerLink="/contactos" class="btn btn-light shrink-0">{{ 'common.sendMessage' | translate }}</a>
+  </div>
+</section>
